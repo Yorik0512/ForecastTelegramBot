@@ -11,17 +11,23 @@
     "axios": "0.19.0",
     "dotenv": "^8.1.0",
     "https": "1.0.0",
-    "telegraf": "3.32.0",
-    "gulp": "^4.0.2"
+    "telegraf": "3.32.0"
   },
   "devDependencies": {
     "@babel/core": "^7.6.0",
     "@babel/preset-env": "^7.6.0",
-    "babel-register": "^6.26.0",
+    "@babel/register": "^7.6.0",
+    "@babel/runtime": "^7.6.0",
+    "babel-eslint": "^8.2.6",
+    "babel-preset-airbnb": "^4.0.1",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
     "gulp-cli": "^2.2.0",
     "gulp-concat": "^2.6.1",
+    "gulp-eslint": "^6.0.0",
     "gulp-sourcemaps": "^2.6.5",
     "nodemon": "1.18.4"
   },
