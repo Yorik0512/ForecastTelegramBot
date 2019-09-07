@@ -1,2 +1,0 @@
-# ForecastTelegramBot
-Created with CodeSandbox
