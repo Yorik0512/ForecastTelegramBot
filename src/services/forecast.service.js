@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-class Forecast {
+export default class ForecastService {
   constructor() {
     this.host = 'https://api.darksky.net/forecast';
     this.apiToken = process.env.FORECAST_TOKEN;
@@ -8,14 +8,30 @@ class Forecast {
     this.longitude = 32.001542;
     this.lang = 'ru';
     this.units = 'si';
-    this.extend = 'hourly';
   }
 
-  getData() {
+  getCurrentData() {
     axios
       .get(`${this.host}/${this.apiToken}/${this.latitude},${this.longitude}`, {
         params: {
-          extend: this.extend,
+          extend: 'currently',
+          lang: this.lang,
+          units: this.units,
+        },
+      })
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
+  getHourlyData() {
+    axios
+      .get(`${this.host}/${this.apiToken}/${this.latitude},${this.longitude}`, {
+        params: {
+          extend: 'hourly',
           lang: this.lang,
           units: this.units,
         },
@@ -28,6 +44,3 @@ class Forecast {
       });
   }
 }
-
-const ForecastService = new Forecast();
-export default ForecastService;

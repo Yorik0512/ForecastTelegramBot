@@ -3,8 +3,9 @@ import babel from "gulp-babel";
 import sourcemaps from "gulp-sourcemaps";
 import eslint from "gulp-eslint";
 // import concat from "gulp-concat";
+import nodemon from "gulp-nodemon";
 
-gulp.task("scripts", function() {
+gulp.task("compile", function() {
   return gulp
     .src("src/**/*.js")
     .pipe(eslint())
@@ -15,4 +16,14 @@ gulp.task("scripts", function() {
     // .pipe(concat("app.js"))
     .pipe(sourcemaps.write("."))
     .pipe(gulp.dest("dist"));
+});
+
+gulp.task("watch", function(done) {
+  nodemon({
+    script: "./dist/index.js",
+    ext: "js",
+    tasks: ["compile"],
+    watch: "./src/",
+    done: done
+  });
 });

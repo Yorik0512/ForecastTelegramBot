@@ -5,13 +5,14 @@
   "main": "src/index.js",
   "scripts": {
     "start": "nodemon src/index.js localhost 8080",
-    "gulp": "gulp scripts"
+    "gulp": "gulp watch"
   },
   "dependencies": {
     "axios": "0.19.0",
     "dotenv": "^8.1.0",
     "https": "1.0.0",
-    "telegraf": "3.32.0"
+    "telegraf": "3.32.0",
+    "telegraf-wit": "^2.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.6.0",
@@ -28,6 +29,7 @@
     "gulp-cli": "^2.2.0",
     "gulp-concat": "^2.6.1",
     "gulp-eslint": "^6.0.0",
+    "gulp-nodemon": "^2.4.2",
     "gulp-sourcemaps": "^2.6.5",
     "nodemon": "1.18.4"
   },

@@ -1,0 +1,1 @@
+{"version":3,"sources":["entites/main.entites.js"],"names":[],"mappings":"AAAA;AACA;AACA;AACA;AACA","sourcesContent":["// export default  class MainEntities {\n//   hello(userName) {\n//     return `Приветики @${userName}`;\n//   }\n// }\n"],"file":"main.entites.js"}

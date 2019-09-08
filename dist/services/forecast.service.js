@@ -13,26 +13,40 @@ var _createClass2 = _interopRequireDefault(require("@babel/runtime/helpers/creat
 
 var _axios = _interopRequireDefault(require("axios"));
 
-var Forecast =
+var ForecastService =
 /*#__PURE__*/
 function () {
-  function Forecast() {
-    (0, _classCallCheck2["default"])(this, Forecast);
+  function ForecastService() {
+    (0, _classCallCheck2["default"])(this, ForecastService);
     this.host = 'https://api.darksky.net/forecast';
     this.apiToken = process.env.FORECAST_TOKEN;
     this.latitude = 46.867515;
     this.longitude = 32.001542;
     this.lang = 'ru';
     this.units = 'si';
-    this.extend = 'hourly';
   }
 
-  (0, _createClass2["default"])(Forecast, [{
-    key: "getData",
-    value: function getData() {
+  (0, _createClass2["default"])(ForecastService, [{
+    key: "getCurrentData",
+    value: function getCurrentData() {
       _axios["default"].get("".concat(this.host, "/").concat(this.apiToken, "/").concat(this.latitude, ",").concat(this.longitude), {
         params: {
-          extend: this.extend,
+          extend: 'currently',
+          lang: this.lang,
+          units: this.units
+        }
+      }).then(function (response) {
+        console.log(response.data);
+      })["catch"](function (error) {
+        console.log(error);
+      });
+    }
+  }, {
+    key: "getHourlyData",
+    value: function getHourlyData() {
+      _axios["default"].get("".concat(this.host, "/").concat(this.apiToken, "/").concat(this.latitude, ",").concat(this.longitude), {
+        params: {
+          extend: 'hourly',
           lang: this.lang,
           units: this.units
         }
@@ -43,10 +57,8 @@ function () {
       });
     }
   }]);
-  return Forecast;
+  return ForecastService;
 }();
 
-var ForecastService = new Forecast();
-var _default = ForecastService;
-exports["default"] = _default;
+exports["default"] = ForecastService;
 //# sourceMappingURL=forecast.service.js.map
