@@ -10,8 +10,8 @@ export default class ForecastService {
     this.units = 'si';
   }
 
-  getCurrentData() {
-    axios
+  getCurrentForecast() {
+    return axios
       .get(`${this.host}/${this.apiToken}/${this.latitude},${this.longitude}`, {
         params: {
           extend: 'currently',
@@ -19,11 +19,9 @@ export default class ForecastService {
           units: this.units,
         },
       })
-      .then((response) => {
-        console.log(response.data);
-      })
+      .then((response) => response.data.currently)
       .catch((error) => {
-        console.log(error);
+        console.log(error); // TODO: Error message for chat.
       });
   }
 

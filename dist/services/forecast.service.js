@@ -27,18 +27,18 @@ function () {
   }
 
   (0, _createClass2["default"])(ForecastService, [{
-    key: "getCurrentData",
-    value: function getCurrentData() {
-      _axios["default"].get("".concat(this.host, "/").concat(this.apiToken, "/").concat(this.latitude, ",").concat(this.longitude), {
+    key: "getCurrentForecast",
+    value: function getCurrentForecast() {
+      return _axios["default"].get("".concat(this.host, "/").concat(this.apiToken, "/").concat(this.latitude, ",").concat(this.longitude), {
         params: {
           extend: 'currently',
           lang: this.lang,
           units: this.units
         }
       }).then(function (response) {
-        console.log(response.data);
+        return response.data.currently;
       })["catch"](function (error) {
-        console.log(error);
+        console.log(error); // TODO: Error message for chat.
       });
     }
   }, {

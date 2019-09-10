@@ -1,7 +1,10 @@
 "start": "nodemon src/index.js localhost 8080",
 
 Forecast entity:
-- forecast for now
+- name of bot => botName
+- forecast for now => currentForecast
 - daily forecast
-- hourly forecast
-- when wind will be more 8
+- hourly forecast (watcher if wind speed >= 8)
+
+TODO:
+- https://scotch.io/tutorials/nodejs-cron-jobs-by-examples
