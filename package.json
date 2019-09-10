@@ -4,8 +4,7 @@
   "description": "Simple f",
   "main": "src/index.js",
   "scripts": {
-    "start": "nodemon src/index.js localhost 8080",
-    "gulp": "gulp watch"
+    "start": "gulp watch"
   },
   "dependencies": {
     "axios": "0.19.0",
