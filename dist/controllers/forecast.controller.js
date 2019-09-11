@@ -11,14 +11,14 @@ var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/cl
 
 var _createClass2 = _interopRequireDefault(require("@babel/runtime/helpers/createClass"));
 
-var ForecastController =
+var Forecast =
 /*#__PURE__*/
 function () {
-  function ForecastController() {
-    (0, _classCallCheck2["default"])(this, ForecastController);
+  function Forecast() {
+    (0, _classCallCheck2["default"])(this, Forecast);
   }
 
-  (0, _createClass2["default"])(ForecastController, [{
+  (0, _createClass2["default"])(Forecast, [{
     key: "currentForecast",
     value: function currentForecast(forecastService, forecastEntities, ctx) {
       var forecastData = forecastService.getCurrentForecast();
@@ -29,8 +29,10 @@ function () {
       });
     }
   }]);
-  return ForecastController;
+  return Forecast;
 }();
 
-exports["default"] = ForecastController;
+var ForecastController = new Forecast();
+var _default = ForecastController;
+exports["default"] = _default;
 //# sourceMappingURL=forecast.controller.js.map

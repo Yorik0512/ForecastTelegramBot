@@ -1,6 +1,10 @@
 import axios from 'axios';
+import dotenv from 'dotenv';
 
-export default class ForecastService {
+// Setup dotenv.
+dotenv.config();
+
+class ForecastApi {
   constructor() {
     this.host = 'https://api.darksky.net/forecast';
     this.apiToken = process.env.FORECAST_TOKEN;
@@ -38,7 +42,10 @@ export default class ForecastService {
         console.log(response.data);
       })
       .catch((error) => {
-        console.log(error);
+        console.log(error); // TODO: Error message for chat.
       });
   }
 }
+
+const ForecastApiService = new ForecastApi();
+export default ForecastApiService;

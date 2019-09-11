@@ -7,4 +7,5 @@ Forecast entity:
 - hourly forecast (watcher if wind speed >= 8)
 
 TODO:
+- Add logger.
 - https://scotch.io/tutorials/nodejs-cron-jobs-by-examples

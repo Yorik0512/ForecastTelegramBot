@@ -1,4 +1,4 @@
-export default class ForecastController {
+class Forecast {
   currentForecast(forecastService, forecastEntities, ctx) {
     const forecastData = forecastService.getCurrentForecast();
     const userName = ctx.message.from.username;
@@ -8,3 +8,6 @@ export default class ForecastController {
     });
   }
 }
+
+const ForecastController = new Forecast();
+export default ForecastController;
