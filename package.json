@@ -7,12 +7,13 @@
     "nodemon": "nodemon dist/index.js localhost 8080",
     "run": "node dist/index.js",
     "watch": "gulp watch",
-    "build": "gulp build"
+    "build": "gulp compile"
   },
   "dependencies": {
     "axios": "0.19.0",
     "dotenv": "^8.1.0",
     "https": "1.0.0",
+    "node-cron": "^2.0.3",
     "telegraf": "3.32.0",
     "telegraf-wit": "^2.1.0"
   },
@@ -23,6 +24,7 @@
     "@babel/runtime": "^7.6.0",
     "babel-eslint": "^8.2.6",
     "babel-preset-airbnb": "^4.0.1",
+    "del": "^5.1.0",
     "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.18.2",
